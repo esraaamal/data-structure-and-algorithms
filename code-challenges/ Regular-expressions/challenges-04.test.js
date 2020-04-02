@@ -13,20 +13,27 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  let regex =/\d+/;
-   regex.test(input);
+  let regex =/\d+/g;
+  let input1 =input;
+  return regex.test(input1);
+
   };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named isCapitalized that takes in a string. This function should use a regular expression pattern to match all words that begin with a capital letter. It should only match words, not punctuation.
+Write a function named isCapitalized that takes in a string.
+ This function should use a regular expression pattern to match all words that begin with a capital letter. It should only match words, not punctuation.
 
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
   // Solution code here...
+  let regex=/^[A-Z ]/ ;
+  let str1=str;
+return str1.match(regex);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
