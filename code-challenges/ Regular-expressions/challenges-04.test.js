@@ -30,28 +30,50 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  let regex=/^[A-Z ]/ ;
-  let str1=str;
+  // let arr=[];
+  let regex=/^[A-Z][a-zA-Z]+$/g ;
+ let str1=str;
+ 
 return str1.match(regex);
+// if(newArr != null){
+// return newArr ;
+// };
+
+
 
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
+Write a function named citiesAtoJ that takes in an array of city 
+names and uses a regular expression pattern to return a new array 
+containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  // let regex=/^[A-J]\w+/g ;
+  // let newAr;
+  // let newArray=[];
+  //   for(let i=0 ;i<arr.length;i++){
+  // let str1= arr[i];
+  //  newAr= str1.match(regex);
+  // let sumAr= newAr.toString();
+  // newArray.push(sumAr);
+//   newArr.push(newArr1);
+// return newArr;
+  // };
+  // return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-You have created a game application and begin by asking users an easy question: In which month is Halloween?
+You have created a game application and begin by asking users an easy question: 
+In which month is Halloween?
 
-Write a function named matchMonth which uses a regular expression pattern to match any of these inputs: October, Oct, october, oct
+Write a function named matchMonth which uses a regular expression pattern 
+to match any of these inputs: October, Oct, october, oct
 
 If the user enters any of these four inputs, return true. For any other input, return false.
 
@@ -60,6 +82,10 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  // (oct|Oct)(ober)?
+  let regex =/^(Oct|oct)(ober)?$/g;
+  let input1 =input;
+  return regex.test(input1);
 };
 
 /* ------------------------------------------------------------------------------------------------
