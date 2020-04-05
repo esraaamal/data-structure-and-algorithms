@@ -52,7 +52,19 @@ containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // let regex=/^[A-J]\w+/g ;
+  
+  let pattern =/^[A-J][a-zA-Z]+$/g;
+  // let str1=arr;
+
+  // return str1.match(pattern);
+
+  for (var i = 0; i < arr.length; i++) {
+     return arr[i].match(pattern);
+}
+
+
+};
+// let regex=/^[A-J]\w+/g ;
   // let newAr;
   // let newArray=[];
   //   for(let i=0 ;i<arr.length;i++){
@@ -64,8 +76,6 @@ const citiesAtoJ = (arr) => {
 // return newArr;
   // };
   // return newArray;
-};
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -100,6 +110,9 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = str => {
   // Solution code here...
+  let pattern =/\w+\s/g ;
+  return str.match(pattern);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -107,7 +120,8 @@ CHALLENGE 6
 
 You want to teach a friend how to play hangman and want to show them using a partially complete puzzle.
 
-Write a function named hangman which uses the replace method to remove all of the vowels (a, e, i, o, u) from the hangman string, regardless of capitalization, and replace them with an underscore.
+Write a function named hangman which uses the replace method to remove all of the vowels (a, e, i, o, u) from the hangman string,
+ regardless of capitalization, and replace them with an underscore.
 
 The function should return a string containing the consonants in their original positions and underscores where the vowels were previously located.
 
@@ -116,6 +130,8 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 
 let hangman = (str) => {
   // Solution code here...
+ let pattern = /(a|e|i|o|u)/gi ;
+ return str.replace(pattern ,'_');
 };
 
 /* ------------------------------------------------------------------------------------------------
