@@ -74,7 +74,13 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+let nweArr=arr.join("");
+let array=[]
+for(let i=0 ;i<arr.length ;i++){
+let newValue=nweArr.charCodeAt(i);
+array.push(newValue);
+}
+return array ;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,7 +94,21 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+  let newarr =arr.map( (val) =>{
+    // return Math.pow(2,val);
+    if(typeof val === "number"){
+    if(val%2 === 0){
+      return val ="even";
+   
+    }else{
+      return val="odd";
+    }
+  }
+  else{
+      return val ="N/A";
+    };
+  });
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------
