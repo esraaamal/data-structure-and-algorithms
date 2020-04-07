@@ -3,7 +3,8 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
-Write a function named forLoopTwoToThe that, given an array of integers as input, iterates over the array and returns a new array. The returned array should contain the result of raising 2 to the power of the original input element.
+Write a function named forLoopTwoToThe that, given an array of integers as input, iterates 
+over the array and returns a new array. The returned array should contain the result of raising 2 to the power of the original input element.
 
 You may choose to complete this challenge using a for loop, for...in syntax, or for...of syntax.
 
@@ -11,13 +12,19 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
- arr.map(value =>{
-
-   return 2^value;
-
-  // Solution code here...
-})
-
+  let arr2=[];
+for(let i=0 ;i<arr.length ;i++){
+  if(arr[i]>=0){
+let two1 =Math.pow(2,arr[i]);
+arr2.push(two1);}
+else{
+  let two1 = Math.pow(2,arr[i]);
+  let newTwo =two1;
+  arr2.push(newTwo);
+}
+};
+return arr2;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -27,9 +34,19 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
-  arr.forEach((val) =>{ 
-    return 2^val;
-})
+  // let arr2=[];
+//   arr.forEach((value) =>{ 
+//      Math.pow(2,value);
+// // arr2.push(two1);
+// });
+// return arr;
+let arrs =[];
+  let squares = arr.forEach((val,i)=>{
+    let value1 =Math.pow(2,val);
+    arrs.push(value1);
+  })
+  return arrs;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,6 +57,10 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  let newarr =arr.map( (val) =>{
+    return Math.pow(2,val);
+  });
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------
