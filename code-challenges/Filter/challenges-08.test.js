@@ -116,13 +116,23 @@ return numbers;
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named getStatName that is an extension of your getBaseStatGreaterThan function from challenge 4. For this function, extend your solution from challenge 4 to only return the name of the stat, rather than the entire stat object.
+Write a function named getStatName that is an extension of your getBaseStatGreaterThan function from challenge 4.
+ For this function, extend your solution from challenge 4 to only return the name of the stat,
+  rather than the entire stat object.
 
 For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 'special-attack'].
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
+  let numbers =arr.filter((val)=>{
+    if(val.baseStat>minBaseStat){
+      return 1;
+    }
+  
+  }).map((val)=> val.stat.name);
+  return numbers;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -176,6 +186,13 @@ const characters = [
 
 const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
+  let numbers =arr.filter((val)=>{
+   val.children.remove();
+   
+   
+  })
+
+return numbers;
 };
 
 /* ------------------------------------------------------------------------------------------------
