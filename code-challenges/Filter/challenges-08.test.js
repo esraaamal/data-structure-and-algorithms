@@ -29,6 +29,14 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
+  let numArr=[];
+  let numbers =arr.filter((val,idx)=>{
+    let regex=/[o|i|e|a|u]/g ;
+    let str1=val;
+    
+   return str1.match(regex);
+  })
+  return numbers;
   // Solution code here...
 };
 
@@ -36,19 +44,29 @@ const filterStringsWithVowels = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named notInFirstArray that, given two arrays as input, uses filter to return an array of all the elements in the second array that are not included in the first array.
+Write a function named notInFirstArray that, given two arrays as input, uses filter to return an
+ array of all the elements in the second array that are not included in the first array.
 
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+let str = forbiddenValues;
+  let numbers =arr.filter((val)=>{
+    // for(let i=0 ;i<str.length;i++){
+    return !(str.includes(val));
+    // }
+   
+   });
+ 
+   return numbers;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named getBaseStatGreaterThan that, given the snorlaxData, below, and an integer as input, uses filter to return an array containing all stats with a baseStat greater than the integer.
+Write a function named getBaseStatGreaterThan that, given the snorlaxData, below,
+ and an integer as input, uses filter to return an array containing all stats with a baseStat greater than the integer.
 
 For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array containing the 'special-defense' and 'special-attack' objects.
 ------------------------------------------------------------------------------------------------ */
@@ -85,7 +103,14 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  let numbers =arr.filter((val)=>{
+    if(val.baseStat>minBaseStat){
+      return 1;
+    }
+  
+  })
+
+return numbers;
 };
 
 /* ------------------------------------------------------------------------------------------------
