@@ -10,18 +10,25 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...a
-  let newat=0
-      for(let i=0;i<arr.length;i++){
-    newat++;};
+  // let newat=0
+  //     for(let i=0;i<arr.length;i++){
+  //   newat++;};
 
-    return newat;
+  //   return newat;
+  var initialValue = 0
+  var reducer = function (accumulator, item) {
+    return accumulator=accumulator+1
+  }
+ let total = arr.reduce(reducer, initialValue)
+return total;
  
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named returnNames that, given the Star Wars data, below, uses reduce to 
+Write a function named returnNames that, given the Star Wars data, 
+below, uses reduce to 
 return an array containing the names of the characters.
 ------------------------------------------------------------------------------------------------ */
 
@@ -77,28 +84,32 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
-  let newArr= arr.reduce((acc,val,idx) =>{
-      return acc[arr.name]=arr.name;
-  },{});
-  return newArr;
+  var newArr =arr.map(val=>{
+  let newstr=  val.name;
+  return newstr;
+  })
+return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named reversedString that takes in a string and returns a string with the letters in reverse order.
+Write a function named reversedString that takes in a string and returns
+ a string with the letters in reverse order.
 
-Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
+Note: You must use reduce for this challenge. 
+You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  return str.split("").reduce((rev, char)=> char + rev, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named countNumberOfChildren that, given the array of characters, below, uses reduce to return the total number of children in the data set.
+Write a function named countNumberOfChildren that, given the array of characters, below, uses reduce 
+to return the total number of children in the data set.
 ------------------------------------------------------------------------------------------------ */
 
 const characters = [
@@ -146,6 +157,21 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  let initialValue=0;
+  let numBoys =arr.map(val => {
+   
+     return val.children;
+    
+  })
+// console.log(numBoys[0].length);
+ let newArr=0;
+ let total=0;
+for(let i=0;i <numBoys.length-2;i++){
+  newArr = numBoys[i].length;
+  total=total +newArr;
+}
+return total;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -157,13 +183,16 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
+let  average = arr.reduce( ( count, sum ) => count+ sum, 0 ) / arr.length;
   // Solution code here...
+  return average;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named countPrimeNumbers that, given an array elements as input, uses reduce to count the number of elements that are prime numbers.
+Write a function named countPrimeNumbers that, given an array elements as input,
+ uses reduce to count the number of elements that are prime numbers.
 
 You are welcome to use the provided isPrime function.
 ------------------------------------------------------------------------------------------------ */
@@ -178,7 +207,12 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  let  primeg = arr.reduce( ( count, sum ) => {
+    return count+ isPrime(sum);
+  
+  },0 ) 
+return primeg;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
