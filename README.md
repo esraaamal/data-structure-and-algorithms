@@ -19,3 +19,4 @@ var numBoys = people.reduce(function(n, person) {
 
 console.log(numBoys);// its will return the number of the boy in this people array
 result is :: //3
+two-dimensional-arrays
