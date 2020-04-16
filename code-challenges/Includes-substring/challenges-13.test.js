@@ -96,7 +96,7 @@ while(i<str.length){
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-
+https://repl.it/repls/NormalNotableConversions
 Write a function named allHappy that takes in an array of strings
  and returns a Boolean indicating whether all 
  those strings contain ":)".
