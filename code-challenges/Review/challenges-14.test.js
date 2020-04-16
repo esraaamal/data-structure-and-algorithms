@@ -10,17 +10,22 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-    for(var i = 0 ; i < arr.length ; i++){
-     return arr[i].charAt(0).toUpperCase();
-    } 
-    return arr;
+  let arraySt=[];
+  let newArr =arr.forEach(val =>{
+ 
+   let output = val.substring(0, 1).toUpperCase() + val.substring(1);
+   arraySt.push(output);
+
+  })
+     return arraySt;
   
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named biggerThanLuke that, given the Star Wars data, below, returns the names of the characters whose mass is greater than Luke's.
+Write a function named biggerThanLuke that, given the Star Wars data, below, 
+returns the names of the characters whose mass is greater than Luke's.
 
 The names should be combined into a single string with each character name separated by a dash.
 
@@ -90,11 +95,19 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+let newArr =  arr.filter(val =>{
+
+   return val.mass> 77;
+  }).map(val2 =>{
+   return val2.name ;
+  })
+  return newArr.join(" - ");
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
-Write a function named sortBy that takes in an array of objects, each of which has a particular property, and sorts those objects by that property, lowest to highest, returning the same array.
+Write a function named sortBy that takes in an array of objects, each of which has a 
+particular property, and sorts those objects by that property, lowest to highest, returning the same array.
 
 Here is an example of the input:
 [
@@ -107,13 +120,30 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+//   arr.sort((a, b) => {
+// let srt1dd =a.price || a.property;
+// let srt2sd =b.price || b.property;
+
+//     return srt1dd> srt2sd;
+
+arr.sort((a, b) => {
+  if( property === null){
+    return parseFloat(a.price) - parseFloat(b.price);
+  }else if(a.property > b.property) {
+    return 1;
+  } else {
+    return -1;
+  }
+});
+
+return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function that determines if a given URL is secure, beginning with https://
+Write a function that determines if a given URL is secure,
+ beginning with https://
 
 Guard against malformed URLs, such as: https:missing-slashes.bad
 
@@ -123,7 +153,10 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-// Solution code here...
+ let pattrn = /^https\:\/\/+/gi;
+ let input1 =url;
+
+  return pattrn.test(input1);
 };
 
 /* ------------------------------------------------------------------------------------------------
