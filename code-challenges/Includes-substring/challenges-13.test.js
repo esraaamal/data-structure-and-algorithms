@@ -96,7 +96,7 @@ while(i<str.length){
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-
+https://repl.it/repls/NormalNotableConversions
 Write a function named allHappy that takes in an array of strings
  and returns a Boolean indicating whether all 
  those strings contain ":)".
@@ -113,9 +113,7 @@ const allHappy = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named findAnything 
-that takes in an array of strings,
- along with a target string. Return an array containing only those strings from the original array that contain the target string.
+Write a function named findAnything that takes in an array of strings, along with a target string. Return an array containing only those strings from the original array that contain the target string.
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
