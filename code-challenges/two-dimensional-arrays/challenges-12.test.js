@@ -60,14 +60,10 @@ forEach to iterate over the hourlySales array
 const salesData = (hours, data) => {
   // Solution code here...
   let arr=[];
-  var valBook ={
-    sales: Number,
-    time:Number
-  }
- let nweArr =data.forEach((val,idx) =>{
-    valBook.sales = `${val} cookies`;
-    valBook.time = hours[idx];
-    arr.push(valBook);
+  
+ let nweArr =hours.forEach((val,idx) =>{
+  
+    arr.push({sales : `${data[idx]} cookies`,time : val});
 
  })
  return arr;
@@ -76,7 +72,8 @@ const salesData = (hours, data) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array.
+Write a function named howManyTreats that will 
+return the quantity of treats you need to pick up from the pet store today from this array.
 ------------------------------------------------------------------------------------------------ */
 
 const errands = [
@@ -92,15 +89,25 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
-};
+  let newStr =0;
+  arr.forEach(e => {
+    e.items.forEach(val =>{
+      if(val.name === 'Treats')
+       newStr += val.quantity;
+    });
+  });
+  return newStr;};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named battleship that accepts a 2D array and two numbers: a row coordinate and a column coordinate.
+Write a function named battleship that accepts a
+ 2D array and two numbers: a row coordinate and a column coordinate.
 
-Return "hit" or "miss" depending on if there's part of a boat at that position in the array. Assume the array has only one of two values at each index. '#' for part of a boat, or ' ' for open water.
+Return "hit" or "miss" depending on if there's
+ part of a boat at that position in the array.
+  Assume the array has only one of two values at each index. 
+  '#' for part of a boat, or ' ' for open water.
 
 Here is a sample board:
 [
@@ -110,12 +117,17 @@ Here is a sample board:
   [' ', ' ', '#', '#'],
 ]
 
-The top row of the board is considered row zero and row numbers increase as they go down.
+The top row of the board is considered
+ row zero and row numbers increase as they go down.
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
-};
+  if (board[row][col] === '#'){
+    return 'hit';
+  }
+  else if (board[row][col] === ' '){
+    return 'miss';
+  }};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -126,7 +138,13 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let dot1 = 1;
+  numbers.forEach(val =>{
+    val.forEach(num =>{
+      dot1*=num;
+    });
+  });
+  return dot1;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,8 +164,14 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
-};
+  let num1 =0;
+  weather.forEach(val =>{
+    val.forEach(num =>{
+     num1+=num;
+    });
+  });
+  let average = num1/(weather.length*7);
+  return average;};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -183,8 +207,12 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
-};
+  let nweArr =[];
+  str.split('\n').forEach(e => {
+   nweArr.push(e.split(',').map(val =>{
+     parseInt(val)}).reduce((acc,val) => acc+=val ,0));
+  });
+  return nweArr;};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
