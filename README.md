@@ -3,6 +3,7 @@
 ## lab6:
 ## lab7:https://repl.it/@RazanAlQuran/301-CC07-map
 ## LAB8:https://repl.it/@RazanAlQuran/301-CC08-filter
+
 ## LAB9:https://repl.it/@RazanAlQuran/301-CC09-reduce
 people = [
     {name: 'Mary', gender: 'girl'},
@@ -19,4 +20,6 @@ var numBoys = people.reduce(function(n, person) {
 
 console.log(numBoys);// its will return the number of the boy in this people array
 result is :: //3
-two-dimensional-arrays
+
+## LAB9:https://repl.it/@RazanAlQuran/301-CC09-reduce
+
