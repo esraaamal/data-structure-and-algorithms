@@ -182,7 +182,7 @@ Calculate the average temperature for each week and return the value of the lowe
 
 For example, in the data set below, the lowest weekly average is 46, which is the average of the temperatures in week 2. All other weeks have average temperatures that are greater than 46.
 ------------------------------------------------------------------------------------------------ */
-
+///
 let lowestWeeklyTemperatureData = [
   [33, 64, 58, 65, 71, 57, 60],
   [40, 45, 33, 53, 44, 59, 48],
